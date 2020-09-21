@@ -1,4 +1,5 @@
 # 음성인식 리모컨
+졸업 프로젝트
 
 ### 개발 기간
 2017.09 ~ 2017.12 (4개월)
@@ -56,7 +57,6 @@ const char clockCommand[] = "지금 몇 시야";
 ![image](https://user-images.githubusercontent.com/67365433/93770268-eeae2a80-fc56-11ea-8a8f-1c2456a2613d.png)
 
 ```c
-
 /* check if you asked for the time after calling alexa. */
   if (!strcmp(clockCommand, VoiceRecognition.getLastCommand()) && state == 1)
   { 
@@ -128,10 +128,6 @@ if(isOnePressed()){
 boolean isOnePressed(){
   return Keypad.isRowPressed(0)&&Keypad.isColumnPressed(0);
 }
-
-boolean isTwoPressed(){
-  return Keypad.isRowPressed(0)&&Keypad.isColumnPressed(1);
-}
 ...
 boolean isSharpPressed(){
   return Keypad.isRowPressed(3)&&Keypad.isColumnPressed(2);
@@ -164,6 +160,7 @@ void myFunction (char *commandSpoken)
     state = 1;
   }
   /* check if you asked to play music after calling alexa. */
+// 전원켜줘
   if (!strcmp(onCommand, VoiceRecognition.getLastCommand()) && state == 1)
   {
     lcd.setCursor(0,1);
@@ -190,6 +187,7 @@ void myFunction (char *commandSpoken)
     state = 0;
   }
 ...
+// 회사 바꿔줘
 if (!strcmp(comCommand, VoiceRecognition.getLastCommand()) && state == 1)
   { 
       if (stateswitch == HIGH){    // LED 가 HIGH 면 LOW 로 바꿔준다.
